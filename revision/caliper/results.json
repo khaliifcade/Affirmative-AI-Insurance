@@ -1,0 +1,202 @@
+{
+ "setup-prov_and": {
+  "succ": 796,
+  "fail": 4,
+  "send": 25.5,
+  "max": 2.1,
+  "min": 0.08,
+  "avg": 0.31,
+  "thr": 23.9,
+  "tps": null
+ },
+ "setup-prov_2of3": {
+  "succ": 800,
+  "fail": 0,
+  "send": 25.5,
+  "max": 0.9,
+  "min": 0.09,
+  "avg": 0.32,
+  "thr": 25.4,
+  "tps": null
+ },
+ "v1-pipelined-p20-10": {
+  "succ": 157,
+  "fail": 155,
+  "send": 10.3,
+  "max": 0.93,
+  "min": 0.05,
+  "avg": 0.36,
+  "thr": 10.2,
+  "tps": 10
+ },
+ "v1-pipelined-p20-25": {
+  "succ": 383,
+  "fail": 377,
+  "send": 25.3,
+  "max": 2.06,
+  "min": 0.06,
+  "avg": 0.22,
+  "thr": 23.6,
+  "tps": 25
+ },
+ "v1-pipelined-p200-10": {
+  "succ": 156,
+  "fail": 156,
+  "send": 10.3,
+  "max": 0.96,
+  "min": 0.06,
+  "avg": 0.37,
+  "thr": 10.2,
+  "tps": 10
+ },
+ "v1-pipelined-p200-25": {
+  "succ": 380,
+  "fail": 380,
+  "send": 25.3,
+  "max": 1.78,
+  "min": 0.05,
+  "avg": 0.23,
+  "thr": 23.9,
+  "tps": 25
+ },
+ "v1-sequential-p20-10": {
+  "succ": 312,
+  "fail": 0,
+  "send": 9.9,
+  "max": 2.12,
+  "min": 0.03,
+  "avg": 0.72,
+  "thr": 9.3,
+  "tps": 10
+ },
+ "v1-sequential-p20-25": {
+  "succ": 768,
+  "fail": 0,
+  "send": 23.9,
+  "max": 2.09,
+  "min": 0.03,
+  "avg": 0.31,
+  "thr": 22.4,
+  "tps": 25
+ },
+ "v2-merged-p20-10": {
+  "succ": 304,
+  "fail": 0,
+  "send": 10.1,
+  "max": 2.08,
+  "min": 0.06,
+  "avg": 0.51,
+  "thr": 9.5,
+  "tps": 10
+ },
+ "v2-merged-p20-25": {
+  "succ": 756,
+  "fail": 0,
+  "send": 25.1,
+  "max": 2.06,
+  "min": 0.06,
+  "avg": 0.25,
+  "thr": 23.6,
+  "tps": 25
+ },
+ "v2-merged-p200-10": {
+  "succ": 304,
+  "fail": 0,
+  "send": 10.1,
+  "max": 2.06,
+  "min": 0.06,
+  "avg": 0.5,
+  "thr": 9.5,
+  "tps": 10
+ },
+ "v2-merged-p200-25": {
+  "succ": 756,
+  "fail": 0,
+  "send": 25.1,
+  "max": 2.08,
+  "min": 0.06,
+  "avg": 0.26,
+  "thr": 23.6,
+  "tps": 25
+ },
+ "v2-merged-2of3-p20-10": {
+  "succ": 304,
+  "fail": 0,
+  "send": 10.1,
+  "max": 2.06,
+  "min": 0.06,
+  "avg": 0.51,
+  "thr": 9.5,
+  "tps": 10
+ },
+ "v2-merged-2of3-p20-25": {
+  "succ": 756,
+  "fail": 0,
+  "send": 25.1,
+  "max": 2.08,
+  "min": 0.06,
+  "avg": 0.26,
+  "thr": 23.6,
+  "tps": 25
+ },
+ "register-prov_and-25": {
+  "succ": 504,
+  "fail": 0,
+  "send": 25.2,
+  "max": 2.04,
+  "min": 0.04,
+  "avg": 0.23,
+  "thr": 22.9,
+  "tps": 25
+ },
+ "register-prov_and-50": {
+  "succ": 1004,
+  "fail": 0,
+  "send": 50.2,
+  "max": 2.03,
+  "min": 0.04,
+  "avg": 0.14,
+  "thr": 45.6,
+  "tps": 50
+ },
+ "register-prov_and-100": {
+  "succ": 2001,
+  "fail": 0,
+  "send": 99.9,
+  "max": 2.04,
+  "min": 0.04,
+  "avg": 0.18,
+  "thr": 90.6,
+  "tps": 100
+ },
+ "register-prov_2of3-25": {
+  "succ": 504,
+  "fail": 0,
+  "send": 25.2,
+  "max": 2.04,
+  "min": 0.04,
+  "avg": 0.23,
+  "thr": 22.9,
+  "tps": 25
+ },
+ "register-prov_2of3-50": {
+  "succ": 1004,
+  "fail": 0,
+  "send": 50.2,
+  "max": 2.04,
+  "min": 0.04,
+  "avg": 0.14,
+  "thr": 45.6,
+  "tps": 50
+ },
+ "register-prov_2of3-100": {
+  "succ": 2004,
+  "fail": 0,
+  "send": 100.0,
+  "max": 2.04,
+  "min": 0.03,
+  "avg": 0.2,
+  "thr": 90.9,
+  "tps": 100
+ }
+}

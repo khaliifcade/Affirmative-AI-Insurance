@@ -1,0 +1,13 @@
+#!/bin/bash
+export NO_PROXY=localhost,127.0.0.1,.example.com,example.com no_proxy=localhost,127.0.0.1,.example.com,example.com; unset HTTPS_PROXY HTTP_PROXY https_proxy http_proxy GRPC_PROXY grpc_proxy ALL_PROXY all_proxy
+B=/home/claude/fab; N=$B/net; O=$N/organizations/ordererOrganizations/example.com/orderers/orderer.example.com
+export FABRIC_CFG_PATH=$B/config
+export ORDERER_GENERAL_LISTENADDRESS=0.0.0.0 ORDERER_GENERAL_LISTENPORT=7050
+export ORDERER_GENERAL_LOCALMSPID=OrdererMSP ORDERER_GENERAL_LOCALMSPDIR=$O/msp
+export ORDERER_GENERAL_TLS_ENABLED=true ORDERER_GENERAL_TLS_PRIVATEKEY=$O/tls/server.key ORDERER_GENERAL_TLS_CERTIFICATE=$O/tls/server.crt ORDERER_GENERAL_TLS_ROOTCAS=[$O/tls/ca.crt]
+export ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=$O/tls/server.crt ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=$O/tls/server.key ORDERER_GENERAL_CLUSTER_ROOTCAS=[$O/tls/ca.crt]
+export ORDERER_GENERAL_BOOTSTRAPMETHOD=none ORDERER_CHANNELPARTICIPATION_ENABLED=true
+export ORDERER_ADMIN_TLS_ENABLED=true ORDERER_ADMIN_TLS_CERTIFICATE=$O/tls/server.crt ORDERER_ADMIN_TLS_PRIVATEKEY=$O/tls/server.key ORDERER_ADMIN_TLS_ROOTCAS=[$O/tls/ca.crt] ORDERER_ADMIN_TLS_CLIENTROOTCAS=[$O/tls/ca.crt] ORDERER_ADMIN_LISTENADDRESS=0.0.0.0:7053
+export ORDERER_OPERATIONS_LISTENADDRESS=0.0.0.0:9443 ORDERER_METRICS_PROVIDER=prometheus
+export ORDERER_FILELEDGER_LOCATION=$N/data/orderer ORDERER_CONSENSUS_WALDIR=$N/data/orderer/etcdraft/wal ORDERER_CONSENSUS_SNAPDIR=$N/data/orderer/etcdraft/snapshot
+exec $B/bin/orderer

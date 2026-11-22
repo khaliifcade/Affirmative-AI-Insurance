@@ -1,0 +1,22 @@
+# Caliper network config for fabric-samples/test-network (2 orgs, 1 orderer, Raft)
+# Paths assume fabric-samples was installed into ./fabric (see run_fabric.sh).
+name: aiprov-test-network
+version: "2.0.0"
+caliper:
+  blockchain: fabric
+channels:
+  - channelName: mychannel
+    contracts:
+      - id: aiprov
+organizations:
+  - mspid: Org1MSP
+    identities:
+      certificates:
+        - name: 'User1'
+          clientPrivateKey:
+            path: '../fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/keystore/priv_sk'
+          clientSignedCert:
+            path: '../fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/signcerts/User1@org1.example.com-cert.pem'
+    connectionProfile:
+      path: '../fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/connection-org1.yaml'
+      discover: true

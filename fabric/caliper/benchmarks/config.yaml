@@ -1,0 +1,54 @@
+# Hyperledger Caliper benchmark for the aiprov chaincode.
+# Round names encode <workload>-<offered TPS>; parse_caliper_report.py relies on this.
+test:
+  name: aiprov-benchmark
+  description: Provenance registration, attestation, claim verification and evidence query
+  workers:
+    number: 4
+  rounds:
+    - label: register-25tps
+      txNumber: 1000
+      rateControl: { type: fixed-rate, opts: { tps: 25 } }
+      workload: { module: workload/registerModel.js }
+    - label: register-50tps
+      txNumber: 2000
+      rateControl: { type: fixed-rate, opts: { tps: 50 } }
+      workload: { module: workload/registerModel.js }
+    - label: register-100tps
+      txNumber: 3000
+      rateControl: { type: fixed-rate, opts: { tps: 100 } }
+      workload: { module: workload/registerModel.js }
+    - label: register-200tps
+      txNumber: 4000
+      rateControl: { type: fixed-rate, opts: { tps: 200 } }
+      workload: { module: workload/registerModel.js }
+    - label: attest-50tps
+      txNumber: 2000
+      rateControl: { type: fixed-rate, opts: { tps: 50 } }
+      workload: { module: workload/recordAttestation.js }
+    - label: attest-100tps
+      txNumber: 3000
+      rateControl: { type: fixed-rate, opts: { tps: 100 } }
+      workload: { module: workload/recordAttestation.js }
+    - label: claim-10tps
+      txNumber: 500
+      rateControl: { type: fixed-rate, opts: { tps: 10 } }
+      workload: { module: workload/fileClaim.js, arguments: { poolSize: 20, fraudShare: 0.1 } }
+    - label: claim-25tps
+      txNumber: 1000
+      rateControl: { type: fixed-rate, opts: { tps: 25 } }
+      workload: { module: workload/fileClaim.js, arguments: { poolSize: 20, fraudShare: 0.1 } }
+    - label: query-100tps
+      txNumber: 3000
+      rateControl: { type: fixed-rate, opts: { tps: 100 } }
+      workload: { module: workload/queryModel.js, arguments: { assets: 20 } }
+    - label: query-300tps
+      txNumber: 6000
+      rateControl: { type: fixed-rate, opts: { tps: 300 } }
+      workload: { module: workload/queryModel.js, arguments: { assets: 20 } }
+monitors:
+  resource:
+    - module: docker
+      options:
+        interval: 5
+        containers: ['all']

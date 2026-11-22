@@ -1,0 +1,229 @@
+test:
+  name: provenance
+  workers:
+    number: 4
+  rounds:
+  - label: setup-prov_and
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 25
+    workload:
+      module: workload/setup.js
+      arguments:
+        contract: prov_and
+    txNumber: 800
+  - label: setup-prov_2of3
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 25
+    workload:
+      module: workload/setup.js
+      arguments:
+        contract: prov_2of3
+    txNumber: 800
+  - label: v1-pipelined-p20-10
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 10
+    workload:
+      module: workload/claim.js
+      arguments:
+        contract: prov_and
+        pool: 20
+        mode: pipelined
+    txDuration: 30
+  - label: v1-pipelined-p20-25
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 25
+    workload:
+      module: workload/claim.js
+      arguments:
+        contract: prov_and
+        pool: 20
+        mode: pipelined
+    txDuration: 30
+  - label: v1-pipelined-p200-10
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 10
+    workload:
+      module: workload/claim.js
+      arguments:
+        contract: prov_and
+        pool: 200
+        mode: pipelined
+    txDuration: 30
+  - label: v1-pipelined-p200-25
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 25
+    workload:
+      module: workload/claim.js
+      arguments:
+        contract: prov_and
+        pool: 200
+        mode: pipelined
+    txDuration: 30
+  - label: v1-sequential-p20-10
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 10
+    workload:
+      module: workload/claim.js
+      arguments:
+        contract: prov_and
+        pool: 20
+        mode: sequential
+    txDuration: 30
+  - label: v1-sequential-p20-25
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 25
+    workload:
+      module: workload/claim.js
+      arguments:
+        contract: prov_and
+        pool: 20
+        mode: sequential
+    txDuration: 30
+  - label: v2-merged-p20-10
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 10
+    workload:
+      module: workload/claim.js
+      arguments:
+        contract: prov_and
+        pool: 20
+        mode: merged
+    txDuration: 30
+  - label: v2-merged-p20-25
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 25
+    workload:
+      module: workload/claim.js
+      arguments:
+        contract: prov_and
+        pool: 20
+        mode: merged
+    txDuration: 30
+  - label: v2-merged-p200-10
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 10
+    workload:
+      module: workload/claim.js
+      arguments:
+        contract: prov_and
+        pool: 200
+        mode: merged
+    txDuration: 30
+  - label: v2-merged-p200-25
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 25
+    workload:
+      module: workload/claim.js
+      arguments:
+        contract: prov_and
+        pool: 200
+        mode: merged
+    txDuration: 30
+  - label: v2-merged-2of3-p20-10
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 10
+    workload:
+      module: workload/claim.js
+      arguments:
+        contract: prov_2of3
+        pool: 20
+        mode: merged
+    txDuration: 30
+  - label: v2-merged-2of3-p20-25
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 25
+    workload:
+      module: workload/claim.js
+      arguments:
+        contract: prov_2of3
+        pool: 20
+        mode: merged
+    txDuration: 30
+  - label: register-prov_and-25
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 25
+    workload:
+      module: workload/register.js
+      arguments:
+        contract: prov_and
+    txDuration: 20
+  - label: register-prov_and-50
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 50
+    workload:
+      module: workload/register.js
+      arguments:
+        contract: prov_and
+    txDuration: 20
+  - label: register-prov_and-100
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 100
+    workload:
+      module: workload/register.js
+      arguments:
+        contract: prov_and
+    txDuration: 20
+  - label: register-prov_2of3-25
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 25
+    workload:
+      module: workload/register.js
+      arguments:
+        contract: prov_2of3
+    txDuration: 20
+  - label: register-prov_2of3-50
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 50
+    workload:
+      module: workload/register.js
+      arguments:
+        contract: prov_2of3
+    txDuration: 20
+  - label: register-prov_2of3-100
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 100
+    workload:
+      module: workload/register.js
+      arguments:
+        contract: prov_2of3
+    txDuration: 20

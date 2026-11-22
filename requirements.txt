@@ -1,0 +1,6 @@
+pandas>=2.0
+numpy>=1.24
+matplotlib>=3.7
+cryptography>=41
+pymongo>=4.0   # only for reading classifications.bson (CSET expert labels)
+pyyaml>=6.0

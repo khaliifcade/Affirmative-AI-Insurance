@@ -1,0 +1,8 @@
+{
+  "name": "provenance",
+  "version": "2.0.0",
+  "description": "Provenance chaincode for affirmative AI insurance: range-read (v1) and deterministic-key (v2) claim verification",
+  "main": "index.js",
+  "scripts": { "start": "fabric-chaincode-node start", "server": "fabric-chaincode-node server --chaincode-address=$CHAINCODE_SERVER_ADDRESS --chaincode-id=$CHAINCODE_ID", "test": "node test/unit.js" },
+  "dependencies": { "fabric-contract-api": "~2.5.8", "fabric-shim": "~2.5.8" }
+}
